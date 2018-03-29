@@ -1,0 +1,19 @@
+Testez vos tests en introduisant des bugs avec le mutation Testing
+	par Théo Fidry
+
+	code coverage n'est pas assez.
+	Car on peut introduire des bugs et la suite de tests ne le detectent.
+	La raison : le code coverage indique ce qui esst executé et non ce qui est testé.
+
+	Comment detecter si une suite de tests est efficace ?
+		introduire des bugs
+
+			creer un mutator : prendre un bout de code et effectué un chgmt => produit un mutant
+
+			prendre un mutant le faire passer par un process builder et efffectuer les tests.
+			
+			(mutation score = nbr mutant killed / nbr de mutant generer)
+
+			library de reference : infection
+
+			

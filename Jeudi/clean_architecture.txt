@@ -1,0 +1,40 @@
+clean architecture
+	par Kuzniak romain
+
+	regle applicative : fonction lié a un contexte donnné
+		recupere un sprint, fermer un sprint
+
+	MVC
+	(entité POPO = plain old )
+		pattern UI à l'origine
+		crée chez Xerox
+		tres bon pattern 
+		avantage
+			simple
+			documenté
+			compatible avec symfon
+		inconvenient
+			aucune gestion des regles metiers
+			couplage fort avec doctrine
+
+	Data layer
+		comme mvc mais une couche service
+			acces aux donnée
+			regles metier
+
+			ducoup, controller plus simple
+
+		avantages:
+			separation data / 
+			documenté
+			compatible avec symfon
+		inconvenient:
+			couplage regle metier et applicatie
+			pas de separtion vue
+
+	DDD
+		Eric Evans
+		Le domaine au coeur de l'application
+
+	Clean Architecture
+		avantages:
