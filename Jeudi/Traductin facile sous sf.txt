@@ -1,0 +1,79 @@
+
+- traduire efficacement une app sf
+	Retour d'experience JoliCode + Ouibus
+	 par Mathieu Santostefano
+
+	 trois types de trad :
+	 	ui
+	 	contenu
+	 	url
+
+	xliff standard recommendé. utilisé par symfony depuis le début. XLIFF est défini par le consortium OASIS.
+	i18n => internationalization
+	
+	Problème et difficulté de la trad:
+		- bcp d'intervenant tech et no tech.
+		- gestion des messages
+			synchro entre code et tradu
+			nomenclature des clés
+			deploiement de correction de message(cmt corriger une faute dans une page le weekend)
+		- stockage des msg (quel format : .csv)
+		- coté frontend
+			gestion des paramètres, du pluriel
+			tout dans window.translation
+		La traduction n'est pas trivial. Ca prend du temps. Ca se chiffre.
+	Solution :
+		- maison 
+		- solution Saas (Loco : interface de traduction)
+		- symfony (sf translation, jms translationbundle, lexikTranslation, php-translation)
+		- phptranslation : 
+			extractor (reader)
+			dumper
+			GUI
+			stockage
+			storage adapter
+			message
+			translator
+				
+			framework-agnostic 
+
+			bundle symfony
+				config de storage saas
+				commandes
+
+			Astuce:
+			facilement configurable dans un yaml (php-translation.yaml)
+
+			noTranslator.php pour interdire la traduction sur certaines parties de code. Pratique en env de test.
+
+			installer un crontab sur un serveur pour telecharger toutes les traductions afin d'etre a jour
+
+			dans le profiler on peut selctionner et envoyer les clés de trad au saas
+
+			Webui permet de lister toutes les trad
+
+			EditInPlace pour editer en live les trad (utiles pour les no tech). Utilisable en dev et prod)
+			configurable pour eviter les derives.
+
+			nomenclatured de clés
+
+		Saas + phptranslation =  graal
+			convention : nomenclature
+			stockage saas
+			edition des msg
+			independances grace aux crontab qui synchronisent les evol
+
+		Resumé
+			les dev ajoutent les clés e, xlf
+			les trad traduisents a travers saas
+			crontab ecrit et telecharges les trad
+
+		Pas encore de solution miracle pour le front
+			BazingaJsTraductionBundle
+		Pb de cache dans php-translation/symfony-bundle
+		traduction des routes => fixé par PR!26143 de sf4
+
+		Plus loin
+			ajouter des storage adapters (redis, lingohub)
+			améliorer UI
+			battle-tester le max de config differentes

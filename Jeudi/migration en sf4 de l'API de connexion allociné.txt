@@ -1,0 +1,30 @@
+migration en sf4 de l'API de connexion allociné dans un ecosysteme 3.3/3.4
+
+	par estelle le cam
+
+	contexte allocine :
+		.NET
+		70% de migration sur du sf 3.3
+		denormalisation de msSQL vers POstGre
+
+		BAse de données en postGre avec GraphQl
+		symfony connect (SSO)
+
+	plan initial:
+		suivre le changelog
+
+		pb apres refacto : commit initial 194 fichiers$
+
+		roadmap :
+			- arborescence
+			- parameter
+			- environment : htaccess sur le serveur qui se cherge de setter l'env
+			- jenkins build
+			- gerer des brands : pusieurs marques sous une app (modif du kernel.php pour aller chercher les nouvelles config)
+			- bundle : public et privé
+			- deploiemnt
+			- infra 
+			- autowiring
+		Ce qu'on aurait fait differement 
+			utiliser les recipes
+			symfony 4.1 : internationalized routing
