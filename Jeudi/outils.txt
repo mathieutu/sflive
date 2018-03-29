@@ -1,0 +1,42 @@
+outils pour améliorer la vie des devs
+	romain gauthier lead & trainer chez sensio lebas
+
+1.indispensables
+	git hook -> permet d'afficher des infos en plus
+		git.io/lyrixx/
+
+	fixtures
+		alice-bundle
+	migrations
+		phinxx
+	tests
+		phpunit
+
+2.Makefile
+	utiliser les makefile pour automatiser le script shell
+	commandes utiles: 
+		make .DEFAULT=_GOAL = variable qui sera executé par default avec le make
+
+3.Docker
+	repo utiles:
+		docker-hostmanager : gere les ip des containers
+		docker-dns-gen 
+
+	image docker:
+		jolicode/phaudit
+		mykiwi/phpaudit
+
+4.CI
+	gitlab-ci.yml
+		avec une ci , on peut verifier:
+			code style
+			erreurs de syntaxes
+			failles de securité
+
+5.CD
+	technos:
+		capistrano
+		docker swarm
+		ansible
+
+Automatisez un max de choses pour se concentrer sur le code, code metier
